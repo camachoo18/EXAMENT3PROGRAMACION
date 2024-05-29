@@ -21,6 +21,12 @@ public class PlayerMovement : MonoBehaviour
     private bool canShoot = true;
     private bool isMoving = false;
 
+    SerializeField] float maxEnergy = 5f;
+    [SerializeField] float sprintCost = 1f;
+    [SerializeField] float sprintMultiplier = 2f;
+    private float currentEnergy;
+
+
     [Header("Rotation")]
     Vector3 rotateLeft = new Vector3(0, 0, 90);
     Vector3 rotateRight = new Vector3(0, 0, -90);
