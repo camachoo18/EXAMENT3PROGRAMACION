@@ -77,6 +77,16 @@ public class PlayerMovement : MonoBehaviour
             lastMoveDirection = moveDirection;
             StartCoroutine(MovePlayer());
         }
+        if (Input.GetKey(sprint) && currentEnergy > 0)
+        {
+            currentSpeed = sprintMultiplier;
+            currentEnergy -= sprintCost * Time.deltaTime;
+        }
+        else if (currentEnergy < maxEnergy)
+        {
+            currentEnergy += sprintCost * Time.deltaTime;
+        }
+
     }
 
     private void HandleShooting()
